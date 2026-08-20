@@ -1,8 +1,12 @@
-import React from 'react'
+import AboutMain from "../components/Aboutus/AboutMain"
+import Hero from "../components/Aboutus/Hero"
 
 const About = () => {
   return (
-    <div>About</div>
+    <main className="bg-white dark:bg-slate-900">
+      <Hero/>
+      <AboutMain/>
+    </main>
   )
 }
 

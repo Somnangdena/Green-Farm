@@ -1,37 +1,22 @@
-import { RiMenu3Line, RiMoonFill, RiPlantLine, RiSunFill } from "react-icons/ri";
+import {
+  RiCloseLargeFill,
+  RiMenu3Line,
+  RiMoonFill,
+  RiPlantLine,
+  RiSunFill,
+} from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import { useState } from "react";
-
-const MenuLinks = [
-  {
-    id: 1,
-    name: "Home",
-    link: "/",
-  },
-  {
-    id: 2,
-    name: "About",
-    link: "/about",
-  },
-  {
-    id: 3,
-    name: "Products",
-    link: "/product",
-  },
-  {
-    id: 4,
-    name: "Contact",
-    link: "/contact",
-  },
-];
+import { useTheme } from "../../context/ThemeContext";
+import { MenuLinks } from "../../data/data";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   return (
     <>
-      <header className="bg-white">
+      <header className="bg-white dark:bg-slate-900 duration-200 sticky top-0 z-20">
         <div className="p-4">
           <div className="container m-auto flex justify-between items-center">
             <Link to={"/"} className="flex justify-center items-center gap-2">
@@ -48,15 +33,15 @@ const NavBar = () => {
                 {MenuLinks.map((data) => (
                   <li
                     key={data.id}
-                    className="inline-block px-4 font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                    className="inline-block px-4 font-semibold text-gray-500 dark:text-white/70 hover:text-black dark:hover:text-white transition cursor-pointer"
                   >
                     <NavLink
                       to={data.link}
                       className={({ isActive }) =>
                         `transition-all duration-300 ${
                           isActive
-                            ? "text-primary font-bold"
-                            : "hover:text-primary/60"
+                            ? "text-primary dark:brightness-150 font-bold"
+                            : "dark:hover:text-white hover:text-black"
                         }`
                       }
                     >
@@ -67,20 +52,25 @@ const NavBar = () => {
               </ul>
             </nav>
             <div className="flex justify-center items-center gap-5">
-              <div onClick={() => setIsDark(!isDark)} className="w-10 h-10 border rounded-full flex justify-center items-center">
-                {
-                  isDark ?
-                  <RiSunFill className="text-2xl"/>
-                  :
+              <div
+                onClick={toggleTheme}
+                className="w-10 h-10 border dark:border-white/70 cursor-pointer rounded-full flex justify-center items-center transition-all duration-300"
+              >
+                {theme === "dark" ? (
+                  <RiSunFill className="text-2xl text-white/70" />
+                ) : (
                   <RiMoonFill className="text-2xl" />
-                
-                }
+                )}
               </div>
               <div
                 onClick={() => setIsOpen(!isOpen)}
-                className="block md:hidden"
+                className="block md:hidden cursor-pointer"
               >
-                <RiMenu3Line className="text-2xl" />
+                {!isOpen ? (
+                  <RiMenu3Line className="text-2xl dark:text-white/70" />
+                ) : (
+                  <RiCloseLargeFill className="text-2xl dark:text-white/70" />
+                )}
               </div>
             </div>
           </div>
