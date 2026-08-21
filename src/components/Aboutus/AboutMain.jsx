@@ -22,8 +22,8 @@ const AboutMain = () => {
   return (
     <section className="container mx-auto">
       <article className="flex flex-col md:flex-row justify-around items-start  gap-10 px-10 my-10">
-        <div className="w-full h-full rounded-2xl">
-            <img className="rounded-2xl object-cover" src={image} alt="image" />
+        <div className="w-full h-full">
+            <img className="rounded-2xl object-cover justify-self-center" src={image} alt="image" />
         </div>
         <div className="space-y-10">
           <div className="space-y-5 dark:text-gray-100">
@@ -39,7 +39,7 @@ const AboutMain = () => {
           </div>
           <div className="flex flex-wrap items-center justify-start sm:flex-row gap-2.5">
             {items.map((item) => (
-              <div key={item.id} className="bg-primary/20 w-full sm:w-36 px-15 py-5 rounded-lg flex flex-col justify-center items-center">
+              <div key={item.id} className="bg-primary/20 w-full sm:w-36 px-10 py-5 rounded-lg flex flex-col justify-center items-center">
                 <h3 className="text-primary/80 dark:brightness-150 text-2xl font-bold">{item.num}</h3>
                 <p className="text-sm font-semibold dark:text-gray-100">{item.desc}</p>
               </div>

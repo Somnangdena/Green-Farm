@@ -22,7 +22,7 @@ const NavBar = () => {
             <Link to={"/"} className="flex justify-center items-center gap-2">
               <RiPlantLine className="w-12 h-12 bg-primary rounded-full text-white text-lg p-1.5" />
               <div>
-                <h2 className="text-primary font-bold text-xl  leading-4">
+                <h2 className="text-primary dark:brightness-150 font-bold text-xl  leading-4">
                   Green Farm
                 </h2>
                 <p className="text-gray-400 text-xs">Fresh From Our Farm</p>

@@ -1,7 +1,9 @@
-import React from "react";
+import ProductsList from "../components/Homes/ProductsList";
 
 const Product = () => {
-  return <div>product</div>;
+  return <div>
+    <ProductsList/>
+  </div>;
 };
 
 export default Product;
