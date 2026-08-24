@@ -1,8 +1,12 @@
-import React from 'react'
+import GetTouch from '../components/Contact/GetTouch'
+import HeroContact from '../components/Contact/HeroContact'
 
 const Contact = () => {
   return (
-    <div>contact</div>
+    <main>
+      <HeroContact/>
+      <GetTouch/>
+    </main>
   )
 }
 

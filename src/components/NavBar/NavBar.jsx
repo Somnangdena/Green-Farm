@@ -17,8 +17,8 @@ const NavBar = () => {
   return (
     <>
       <header className="bg-white dark:bg-slate-900 duration-200 sticky top-0 z-20">
-        <div className="p-4">
-          <div className="container m-auto flex justify-between items-center">
+        <div className="p-4 mx-5">
+          <div className="container mx-auto flex justify-between items-center gap-2">
             <Link to={"/"} className="flex justify-center items-center gap-2">
               <RiPlantLine className="w-12 h-12 bg-primary rounded-full text-white text-lg p-1.5" />
               <div>
@@ -38,7 +38,7 @@ const NavBar = () => {
                     <NavLink
                       to={data.link}
                       className={({ isActive }) =>
-                        `transition-all duration-300 ${
+                        `transition-all ${
                           isActive
                             ? "text-primary dark:brightness-150 font-bold"
                             : "dark:hover:text-white hover:text-black"

@@ -1,10 +1,16 @@
+import { Link } from "react-router-dom";
 import { listProducts } from "../../data/data";
+import { motion } from "motion/react";
 
 const ProductsList = () => {
   return (
     <div className="max-w-5xl mx-auto px-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {listProducts.map((product) => (
-        <div
+      {listProducts.map((product, index) => (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+          viewport={{ once: true }}
           key={product.id}
           className="group overflow-hidden rounded-2xl bg-white shadow-sm dark:border dark:border-white/20 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
         >
@@ -32,17 +38,22 @@ const ProductsList = () => {
             </p>
 
             <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-xl font-bold text-primary brightness-150">
+              <span className="text-xl font-bold text-primary dark:brightness-150">
                 {`$${product.price}`}
-                <span className="text-sm font-normal text-gray-500">{product.id === 5 ? "/dozen" : "/kg"}</span>
+                <span className="text-sm font-normal text-gray-500">
+                  {product.id === 5 ? "/dozen" : "/kg"}
+                </span>
               </span>
 
-              <button className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/80">
-                Add to Cart
-              </button>
+              <Link
+                to={`/product/${product.id}`}
+                className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/80"
+              >
+                View
+              </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

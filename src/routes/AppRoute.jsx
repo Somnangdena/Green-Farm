@@ -4,6 +4,8 @@ import RootLayout from "../layouts/RootLayout";
 import About from "../pages/About";
 import Product from "../pages/Product";
 import Contact from "../pages/Contact";
+import ProductDetail from "../pages/ProductDetail";
+import NotFound from "../pages/NotFound";
 
 const routers = createBrowserRouter([
   {
@@ -23,9 +25,18 @@ const routers = createBrowserRouter([
         element: <Product />,
       },
       {
+        path: "/product/:id",
+        element: <ProductDetail />,
+        errorElement: <NotFound/>
+      },
+      {
         path: "/Contact",
         element: <Contact />,
       },
+      {
+        path: "*",
+        element: <NotFound/>
+      }
     ],
   },
 ]);

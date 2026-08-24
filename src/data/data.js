@@ -35,7 +35,7 @@ export const listProducts = [
     price: 2.5,
     image: v1,
     category: "Vegetables",
-    description: "Fresh and naturally grown tomatoes directly from out farm",
+    description: "Fresh and naturally grown tomatoes directly from out farm.",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ export const listProducts = [
     price: 3,
     image: v2,
     category: "Vegetables",
-    description: "Fresh organic carrots grown with care using farming",
+    description: "Fresh organic carrots grown with care using farming.",
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ export const listProducts = [
     image: v3,
     category: "Vegetables",
     description:
-      "Crispy and fresh lettuce harvested from out farm every morning",
+      "Crispy and fresh lettuce harvested from out farm every morning.",
   },
   {
     id: 4,
@@ -60,7 +60,7 @@ export const listProducts = [
     price: 4,
     image: v4,
     category: "Fruits",
-    description: "Sweet and delicious mangoes carefully growns on our farm",
+    description: "Sweet and delicious mangoes carefully growns on our farm.",
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ export const listProducts = [
     price: 4.5,
     image: v5,
     category: "eggs",
-    description: "Fresh Farm eggs collected daily from healthy chickens",
+    description: "Fresh Farm eggs collected daily from healthy chickens.",
   },
   {
     id: 6,
@@ -76,6 +76,6 @@ export const listProducts = [
     price: 6,
     image: v6,
     category: "Fruits",
-    description: "Fresh, Sweet strawberries grown naturally on our farm",
+    description: "Fresh, Sweet strawberries grown naturally on our farm.",
   },
 ];

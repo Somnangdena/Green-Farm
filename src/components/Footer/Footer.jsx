@@ -9,6 +9,7 @@ import {
 } from "react-icons/ri";
 import { MenuLinks } from "../../data/data";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 
 const list = [
   {
@@ -31,9 +32,15 @@ const list = [
 const Footer = () => {
   return (
     <footer className="bg-primary w-full">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5">
         <div className="grid grid-cols-1 gap-5 px-5 sm:grid-cols-2 lg:grid-cols-4 pt-8 pb-10">
-          <div className="pr-5 space-y-2">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="pr-5 space-y-2"
+          >
             <div className="flex items-center">
               <RiPlantLine className="w-8 h-8 text-white text-lg p-1.5" />
               <h3 className="font-semibold text-white text-xl">Green Farm</h3>
@@ -41,8 +48,14 @@ const Footer = () => {
             <p className="text-white text-sm">
               Fresh healthy naturally grown products directly from our farm
             </p>
-          </div>
-          <div className="space-y-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-2"
+          >
             <h3 className="font-semibold text-white text-lg">Quick Links</h3>
             <ul>
               {MenuLinks.map((data) => (
@@ -56,8 +69,14 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="space-y-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-2"
+          >
             <h3 className="font-semibold text-white text-lg">Our Farm</h3>
             {list.map((item) => (
               <span
@@ -68,16 +87,31 @@ const Footer = () => {
                 <p>{item.desc}</p>
               </span>
             ))}
-          </div>
-          <div className="space-y-2">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-2"
+          >
             <h3 className="font-semibold text-white text-lg">Follow Us</h3>
             <div className="flex gap-2.5 transition duration-300">
               <RiFacebookFill className="w-8 h-8 text-gray-50 bg-gray-300/40 rounded-full hover:text-slate-600 p-1 cursor-pointer" />
               <RiLinkedinFill className="w-8 h-8 text-gray-50 bg-gray-300/40 rounded-full hover:text-slate-600 p-1 cursor-pointer" />
               <RiGoogleFill className="w-8 h-8 text-gray-50 bg-gray-300/40 rounded-full hover:text-slate-600 p-1 cursor-pointer" />
             </div>
-          </div>
+          </motion.div>
         </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="pb-6 text-sm text-gray-200 flex justify-center items-center"
+        >
+          <p>Copyright 2026 &copy; Green Farm - All Right Rserved. </p>
+        </motion.div>
       </div>
     </footer>
   );
