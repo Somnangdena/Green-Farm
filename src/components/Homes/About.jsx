@@ -6,12 +6,13 @@ const AboutMain = () => {
   return (
     <section className="container mx-auto">
       <article className="flex flex-col md:flex-row justify-center items-center gap-10 px-7 my-15">
-        <motion.div 
-        initial={{ opacity: 0, x: -30 }}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-        className="relative w-full md:w-1/2 transition">
+          className="relative w-full md:w-1/2"
+        >
           {/* images */}
           <img
             src={image}
@@ -25,12 +26,13 @@ const AboutMain = () => {
           </div>
         </motion.div>
         {/* content */}
-        <motion.div 
-        initial={{ opacity: 0, x: 30 }}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-        className="space-y-5 dark:text-gray-100">
+          className="space-y-5 dark:text-gray-100"
+        >
           <p className="uppercase text-primary font-bold">About our farm</p>
           <h2 className="text-3xl font-bold">
             Farming With Passion

@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme{
-    --color-primary: #008235;
+:root {
+  --bg: #fff;
+}
+.dark {
+  --bg: oklch(20.8% 0.042 265.755);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #008235;
+}
+
+body {
+  background-color: var(--bg);
+}

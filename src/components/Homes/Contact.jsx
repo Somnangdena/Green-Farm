@@ -24,12 +24,13 @@ const Contact = () => {
           >
             come visit our contact us to learn more about our fresh product
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="flex justify-center items-center mt-4">
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center mt-4"
+          >
             <Link
               to={"contact"}
               className="rounded-full bg-white dark:bg-black dark:text-white px-8 py-3 font-semibold text-primary cursor-pointer transition hover:bg-primary hover:text-white duration-300"

@@ -12,7 +12,7 @@ const Products = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay:0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="mx-auto px-5 mt-3 max-w-2xl text-sm leading-6 text-gray-500 sm:text-base"
           >
