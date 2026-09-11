@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import image from "../../assets/images/farm.jpg";
 
 const AboutMain = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="container mx-auto">
-      <article className="flex flex-col md:flex-row justify-center items-center gap-10 px-7 my-15">
+      <article className="flex flex-col md:flex-row justify-center items-center gap-10 px-7 my-15 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,12 +51,12 @@ const AboutMain = () => {
               directly from our farm to your family.
             </p>
           </div>
-          <Link
-            to={"about"}
+          <button
+            onClick={() => navigate("about")}
             className="rounded-full bg-primary/80 px-8 py-3 font-semibold text-white cursor-pointer transition hover:bg-primary"
           >
             Discover Our Story →
-          </Link>
+          </button>
         </motion.div>
       </article>
     </section>

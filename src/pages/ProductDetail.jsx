@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { listProducts } from "../data/data";
+import { MdArrowBack } from "react-icons/md";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -13,13 +14,13 @@ const ProductDetail = () => {
     <section className="bg-primary/5">
       <div className="container mx-auto py-10">
         <div className="mx-5 sm:mx-10">
-          <div className="bg-white dark:bg-gray-800 w-full mx-auto p-8 rounded-2xl shadow-xl">
             <button
               onClick={() => navigate(-1)}
-              className="mb-8 text-primary p-4 dark:brightness-150 font-semibold cursor-pointer"
+              className="mb-4 flex justify-center items-center gap-2 text-primary p-4 dark:brightness-150 font-semibold cursor-pointer"
             >
-              ← Go Back
+              <MdArrowBack/>Go Back
             </button>
+          <div className="bg-white dark:bg-gray-800 w-full mx-auto p-8 rounded-2xl shadow-xl">
 
             <div className="flex flex-col justify-center items-center gap-10 md:flex-row">
               <div className="w-full md:w-1/2 flex justify-center">
