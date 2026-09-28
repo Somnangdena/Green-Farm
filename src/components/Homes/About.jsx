@@ -2,19 +2,18 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import image from "../../assets/images/farm.jpg";
 
-const AboutMain = () => {
+const About = () => {
   const navigate = useNavigate();
 
   return (
     <section className="container mx-auto">
-      <article className="flex flex-col md:flex-row justify-center items-center gap-10 px-7 my-15 overflow-hidden">
+      <article className="flex flex-col md:flex-row justify-center items-center gap-10 px-7 py-8 my-7 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="relative w-full md:w-1/2"
-        >
+          className="relative w-full md:w-1/2">
           {/* images */}
           <img
             src={image}
@@ -33,8 +32,7 @@ const AboutMain = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="space-y-5 dark:text-gray-100"
-        >
+          className="space-y-5 dark:text-gray-100">
           <p className="uppercase text-primary font-bold">About our farm</p>
           <h2 className="text-3xl font-bold">
             Farming With Passion
@@ -53,8 +51,7 @@ const AboutMain = () => {
           </div>
           <button
             onClick={() => navigate("about")}
-            className="rounded-full bg-primary/80 px-8 py-3 font-semibold text-white cursor-pointer transition hover:bg-primary"
-          >
+            className="rounded-full bg-primary/80 px-8 py-3 font-semibold text-white cursor-pointer transition hover:bg-primary">
             Discover Our Story →
           </button>
         </motion.div>
@@ -63,4 +60,4 @@ const AboutMain = () => {
   );
 };
 
-export default AboutMain;
+export default About;
